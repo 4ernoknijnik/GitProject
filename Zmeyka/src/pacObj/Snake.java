@@ -3,7 +3,7 @@ package pacObj;
 public class Snake {
 
 	public int direction = 0;
-	public int length = 2;
+	public int length = 10;
 
 	public int snakeX[] = new int[100]; // макс число элементов змейки
 	public int snakeY[] = new int[100]; // макс число элементов змейки
@@ -16,15 +16,26 @@ public class Snake {
 
 	}
 
-	public void move (){
-		for (int d=length; d>0; d--){
-			snakeX[d] = snakeX[d-1];
-			snakeY[d] = snakeY[d-1];
-			
+	public void move() {
+		for (int d = length; d > 0; d--) {
+			snakeX[d] = snakeX[d - 1];
+			snakeY[d] = snakeY[d - 1];
+
 		}
-		if(direction ==0) snakeX[0]++;
-		if(direction ==1) snakeY[0]++;
-		if(direction ==2) snakeX[0]--;
-		if(direction ==3) snakeY[0]--;
+		if (direction == 0)
+			snakeX[0]++;
+		if (direction == 1)
+			snakeY[0]++;
+		if (direction == 2)
+			snakeX[0]--;
+		if (direction == 3)
+			snakeY[0]--;
+
+		for (int d = length - 1; d < 0; d++) {
+			if (snakeX[0] == snakeX[d] & snakeY[0] == snakeY[d])
+				length = d - 2;
+		}
+		if (length < 2)
+			length = 2;
 	}
 }
