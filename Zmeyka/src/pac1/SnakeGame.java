@@ -2,20 +2,30 @@ package pac1;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
-public class SnakeGame extends JPanel {
+import pacObj.Snake;
+
+public class SnakeGame extends JPanel implements ActionListener {
 
 	public static final int SCALE = 32; // размерность одной клетки
 	public static final int WIDTH = 20; // сколько клеток в ширину
 	public static final int HEIGHT = 20; // сколько клеток в длинну
+	public static final int SPEED = 5;
 
-	public SnakeGame() { // конструктор
+	Snake s = new Snake(10, 10, 9, 10);
+	Timer t = new Timer(1000/SPEED, this);
 
+	
+	public SnakeGame(){
+		t.start();
 	}
-
+	
 	public void paint(Graphics g) {
 		g.setColor(color(5, 50, 10)); // задаем цвет JPanel
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE); // вывод окна по кординатам и размеры
@@ -27,9 +37,11 @@ public class SnakeGame extends JPanel {
 		for (int yy=0; yy<=HEIGHT*SCALE; yy+=SCALE){  // рисуем полоски по y
 			g.drawLine(0, yy,WIDTH*SCALE, yy );
 		}
-		
-		
-		
+		for (int d=0; d<s.length; d++){   //рисуем змейку
+			g.setColor(color(200,150,0));
+			g.fillRect(s.snakeX[d]*SCALE+1, s.snakeY[d]*SCALE+1, SCALE-1, SCALE-1);
+		}
+				
 	}
 
 	public Color color(int red, int green, int blue) {
@@ -44,6 +56,15 @@ public class SnakeGame extends JPanel {
 		frame.setLocationRelativeTo(null); // окошко будет распологаться точно по центру
 		frame.add(new SnakeGame()); // добавляем к JFrame JPanel
 		frame.setVisible(true); // сделать окно видным
+	}
+
+	
+	public void actionPerformed(ActionEvent e) {
+		
+		s.move();
+		
+		repaint();
+		
 	}
 
 }
