@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import pacObj.Apple;
 import pacObj.Snake;
 
 public class SnakeGame extends JPanel implements ActionListener {
@@ -19,6 +20,8 @@ public class SnakeGame extends JPanel implements ActionListener {
 	public static final int WIDTH = 20; // сколько клеток в ширину
 	public static final int HEIGHT = 20; // сколько клеток в длинну
 	public static final int SPEED = 5;
+
+	Apple a = new Apple((int) (Math.random() * WIDTH), (int) (Math.random() * HEIGHT));
 
 	Snake s = new Snake(10, 10, 9, 10);
 	Timer t = new Timer(1000 / SPEED, this);
@@ -50,6 +53,8 @@ public class SnakeGame extends JPanel implements ActionListener {
 			g.fillRect(s.snakeX[d] * SCALE + 1, s.snakeY[d] * SCALE + 1, SCALE - 1, SCALE - 1);
 		}
 
+		g.setColor(color(255, 0, 0)); // wdtn rhfcysq
+		g.fillRect(a.posX * SCALE + 1, a.posY * SCALE + 1, SCALE - 1, SCALE - 1);
 	}
 
 	public Color color(int red, int green, int blue) {
@@ -61,7 +66,7 @@ public class SnakeGame extends JPanel implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // по завешении
 																// закрытие окна
 		frame.setResizable(false); // изменять размер окна
-		frame.setSize(WIDTH * SCALE + 7, HEIGHT * SCALE + 7); // задаем размер
+		frame.setSize(WIDTH * SCALE + 7, HEIGHT * SCALE + 30 ); // задаем размер
 																// поля +7 для
 																// ровного поля
 		frame.setLocationRelativeTo(null); // окошко будет распологаться точно
@@ -73,7 +78,16 @@ public class SnakeGame extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		s.move();
+		if ((s.snakeX[0] == a.posX) & (s.snakeY[0] == a.posY)) {
+			a.setRandomPosition();
+			s.length++;
+		}
+		for (int k = 1; k < s.length; k++) {
+			if ((s.snakeX[k] == a.posX) & (s.snakeY[k] == a.posY)) {
+				a.setRandomPosition();
 
+			}
+		}
 		repaint();
 
 	}
