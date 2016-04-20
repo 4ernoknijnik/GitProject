@@ -12,7 +12,7 @@ public class Snake {
 		snakeX[0] = x0;
 		snakeY[0] = y0;
 		snakeX[1] = x1;
-		snakeX[1] = y1;
+		snakeY[1] = y1;
 
 	}
 
