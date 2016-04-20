@@ -28,8 +28,7 @@ public class SnakeGame extends JPanel {
 			g.drawLine(0, yy,WIDTH*SCALE, yy );
 		}
 		
-		
-		
+				
 	}
 
 	public Color color(int red, int green, int blue) {
