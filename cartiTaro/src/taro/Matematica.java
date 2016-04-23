@@ -19,6 +19,19 @@ public class Matematica extends GUI {
 	public int Const12;
 	public int Const13;
 
+	public int A;
+	public int B;
+	public int C;
+	public int D;
+	public int E;
+	public int F;
+	public int G1max;
+	public int G2help;
+	public int H;
+	public int I;
+	public int J;
+	public int K;
+
 	public void Matematica(String day, String month, String year) {
 
 		Const1 = Integer.parseInt(day);
@@ -123,8 +136,82 @@ public class Matematica extends GUI {
 		}
 		System.out.println("13 = " + Const13 + "ÍÀÄÎ ÏÐÎÂÅÐÈÒÜ ÏÐÀÂÈËÜÍÎÑÒÜ");
 
+		// Äàëüøå ïîøëè áóêâû
+
+		A = Const1 + Const4;
+		if (A >= 23) {
+			A = A - 22;
+		}
+		System.out.println("A = " + A);
+
+		B = Const2 + Const4;
+		if (B >= 23) {
+			B = B - 22;
+		}
+		System.out.println("B = " + B);
+
+		C = Const2 + Const5;
+		if (C >= 23) {
+			C = C - 22;
+		}
+		System.out.println("C = " + C);
+
+		D = Const3 + Const5;
+		if (D >= 23) {
+			D = D - 22;
+		}
+		System.out.println("D = " + D);
+
+		E = Const4 + Const6;
+		if (E >= 23) {
+			E = E - 22;
+		}
+		System.out.println("E = " + E);
+
+		F = Const5 + Const6;
+		if (F >= 23) {
+			F = F - 22;
+		}
+		System.out.println("F = " + F);
+
+		G1max = C + D;
+		if (G1max >= 23) {
+			G1max = G1max - 22;
+		}
+		System.out.println("G1max = " + G1max);
+
+		G2help = B + F;
+		if (G2help >= 23) {
+			G2help = G2help - 22;
+		}
+		System.out.println("G2help = " + G2help);
+
+		H = A + E;
+		if (H >= 23) {
+			H = H - 22;
+		}
+		System.out.println("H = " + H);
+
+		I = G1max + G2help;
+		if (I >= 23) {
+			I = I - 22;
+		}
+		System.out.println("I = " + I);
+
+		J = Const2 + Const8;
+		if (J >= 23) {
+			J = J - 22;
+		}
+		System.out.println("J = " + J);
+
+		K = Const10 + Const6;
+		if (K >= 23) {
+			K = K - 22;
+		}
+		System.out.println("K = " + K);
+
 		return Const1 & Const2 & Const3 & Const4 & Const5 & Const6 & Const7 & Const8 & Const9 & Const10 & Const11
-				& Const12 & Const13;
+				& Const12 & Const13 & A & B & C & D & E & F & G1max & G2help & H & I & J & K;
 	}
 
 }

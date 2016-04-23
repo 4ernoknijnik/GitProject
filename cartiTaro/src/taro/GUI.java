@@ -53,6 +53,8 @@ public class GUI {
 				matem.Matematica(day, month, year);
 
 				matem.sum();
+				
+			//	System.out.println(matem.A);
 			//	System.out.println(matem.Const3);
 			//	System.out.println(matem.Const2);
 			//	System.out.println(matem.Const1);
