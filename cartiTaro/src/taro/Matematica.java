@@ -4,9 +4,9 @@ import javax.swing.JTextField;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-public class Matematica extends GUI {
-	public int Const1;
-	public int Const2;
+public class Matematica  {
+	public static int Const1;
+	public static int Const2;
 	public int Const3;
 	public int Const4;
 	public int Const5;
@@ -32,7 +32,11 @@ public class Matematica extends GUI {
 	public int J;
 	public int K;
 
+
+	
 	public void Matematica(String day, String month, String year) {
+		
+		
 
 		Const1 = Integer.parseInt(day);
 		Const2 = Integer.parseInt(month);
@@ -48,10 +52,12 @@ public class Matematica extends GUI {
 		int four = Integer.parseUnsignedInt(year4);
 
 		Const3 = (one + two) + (three + four);
-
+		
+		
 	}
 
-	public int sum() {
+	public void sum() {
+		
 
 		if (Const1 >= 23) {
 			Const1 = Const1 - 22;
@@ -209,9 +215,13 @@ public class Matematica extends GUI {
 			K = K - 22;
 		}
 		System.out.println("K = " + K);
-
-		return Const1 & Const2 & Const3 & Const4 & Const5 & Const6 & Const7 & Const8 & Const9 & Const10 & Const11
-				& Const12 & Const13 & A & B & C & D & E & F & G1max & G2help & H & I & J & K;
+		
+		
+		
+		
+		
 	}
+
+	
 
 }

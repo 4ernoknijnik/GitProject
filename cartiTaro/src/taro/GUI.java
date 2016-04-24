@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 
 public class GUI {
 
+	public String day;
 	public JFrame frame;
 	public JTextField textField;
 	public JTextField textField_1;
@@ -52,12 +53,16 @@ public class GUI {
 				Matematica matem = new Matematica();
 				matem.Matematica(day, month, year);
 
+				
 				matem.sum();
+				FileXLS XLS = new FileXLS();
+				XLS.Create();
+				
 				
 			//	System.out.println(matem.A);
 			//	System.out.println(matem.Const3);
-			//	System.out.println(matem.Const2);
-			//	System.out.println(matem.Const1);
+				System.out.println(matem.Const2);
+				System.out.println(matem.Const4);
 			//	System.out.println(matem.Const1 + matem.Const2 + matem.Const3);
 
 			}
@@ -86,6 +91,8 @@ public class GUI {
 								GroupLayout.PREFERRED_SIZE).addComponent(button))
 				.addContainerGap(524, Short.MAX_VALUE)));
 		frame.getContentPane().setLayout(groupLayout);
+		
+		
 	}
 
 }
