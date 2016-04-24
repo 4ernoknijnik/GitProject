@@ -15,7 +15,7 @@ public class FileXLS {
 		
 		try {
 System.out.println(per.PerConst1);
-			String filename = "E:/Taro.xls";
+			String filename =GUI.SaveFile;
 
 			@SuppressWarnings("resource")
 			HSSFWorkbook workbook = new HSSFWorkbook();
