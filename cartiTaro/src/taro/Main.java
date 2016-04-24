@@ -10,7 +10,7 @@ public abstract class Main implements ActionListener {
 		GUI gui = new GUI();
 		gui.initialize();
 
-	//	Matematica matematica=new Matematica();
+	
 		
 		
 		
