@@ -11,7 +11,9 @@ import java.awt.event.ActionEvent;
 
 public class GUI {
 
-	public String day;
+	public static String day;
+	public static String month;
+	public static String year;
 	public JFrame frame;
 	public JTextField textField;
 	public JTextField textField_1;
@@ -46,24 +48,18 @@ public class GUI {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				String day = textField.getText();
-				String month = textField_1.getText();
-				String year = textField_2.getText();
+				day = textField.getText();
+				month = textField_1.getText();
+				year = textField_2.getText();
 
 				Matematica matem = new Matematica();
-				matem.Matematica(day, month, year);
-
+				
 				
 				matem.sum();
-				FileXLS XLS = new FileXLS();
-				XLS.Create();
-				
-				
-			//	System.out.println(matem.A);
-			//	System.out.println(matem.Const3);
-				System.out.println(matem.Const2);
-				System.out.println(matem.Const4);
-			//	System.out.println(matem.Const1 + matem.Const2 + matem.Const3);
+
+			
+				FileXLS xls = new FileXLS();
+				 xls.Create();
 
 			}
 		});
@@ -91,8 +87,7 @@ public class GUI {
 								GroupLayout.PREFERRED_SIZE).addComponent(button))
 				.addContainerGap(524, Short.MAX_VALUE)));
 		frame.getContentPane().setLayout(groupLayout);
-		
-		
+
 	}
 
 }

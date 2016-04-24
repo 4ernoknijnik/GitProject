@@ -1,50 +1,45 @@
 package taro;
 
-import javax.swing.JTextField;
+import taro.GUI;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-public class Matematica  {
-	public static int Const1;
+public  class Matematica {
+	public static int Const1; // переменная Static что бы получить значение а не
+								// 0
 	public static int Const2;
-	public int Const3;
-	public int Const4;
-	public int Const5;
-	public int Const6;
-	public int Const7;
-	public int Const8;
-	public int Const9;
-	public int Const10;
-	public int Const11;
-	public int Const12;
-	public int Const13;
+	public static int Const3;
+	public static int Const4;
+	public static int Const5;
+	public static int Const6;
+	public static int Const7;
+	public static int Const8;
+	public static int Const9;
+	public static int Const10;
+	public static int Const11;
+	public static int Const12;
+	public static int Const13;
 
-	public int A;
-	public int B;
-	public int C;
-	public int D;
-	public int E;
-	public int F;
-	public int G1max;
-	public int G2help;
-	public int H;
-	public int I;
-	public int J;
-	public int K;
+	public static int A;
+	public static int B;
+	public static int C;
+	public static int D;
+	public static int E;
+	public static int F;
+	public static int G1max;
+	public static int G2help;
+	public static int H;
+	public static int I;
+	public static int J;
+	public static int K;
 
+	public  Matematica() {
 
-	
-	public void Matematica(String day, String month, String year) {
-		
-		
+		Const1 = Integer.parseInt(GUI.day);
+		Const2 = Integer.parseInt(GUI.month);
 
-		Const1 = Integer.parseInt(day);
-		Const2 = Integer.parseInt(month);
-
-		String year1 = "" + (year.charAt(year.length() - 4));
-		String year2 = "" + (year.charAt(year.length() - 3));
-		String year3 = "" + (year.charAt(year.length() - 2));
-		String year4 = "" + (year.charAt(year.length() - 1));
+		String year1 = "" + (GUI.year.charAt(GUI.year.length() - 4));
+		String year2 = "" + (GUI.year.charAt(GUI.year.length() - 3));
+		String year3 = "" + (GUI.year.charAt(GUI.year.length() - 2));
+		String year4 = "" + (GUI.year.charAt(GUI.year.length() - 1));
 
 		int one = Integer.parseUnsignedInt(year1);
 		int two = Integer.parseUnsignedInt(year2);
@@ -52,12 +47,10 @@ public class Matematica  {
 		int four = Integer.parseUnsignedInt(year4);
 
 		Const3 = (one + two) + (three + four);
-		
-		
+
 	}
 
 	public void sum() {
-		
 
 		if (Const1 >= 23) {
 			Const1 = Const1 - 22;
@@ -215,13 +208,7 @@ public class Matematica  {
 			K = K - 22;
 		}
 		System.out.println("K = " + K);
-		
-		
-		
-		
-		
-	}
 
-	
+	}
 
 }
