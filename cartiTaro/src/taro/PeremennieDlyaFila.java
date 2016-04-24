@@ -2,34 +2,37 @@ package taro;
 
 public class PeremennieDlyaFila {
 
-	public int PerConst1;
-	public int PerConst2;
-	public int PerConst3;
-	public int PerConst4;
-	public int PerConst5;
-	public int PerConst6;
-	public int perConst7;
-	public int perConst8;
-	public int perConst9;
-	public int PerConst10;
-	public int perConst11;
-	public int PerConst12;
-	public int PerConst13;
+	public String PerConst1;
+	public String PerConst2;
+	public String PerConst3;
+	public String PerConst4;
+	public String PerConst5;
+	public String PerConst6;
+	public String PerConst7;
+	public String PerConst8;
+	public String PerConst9;
+	public String PerConst10;
+	public String PerConst11;
+	public String PerConst12;
+	public String PerConst13;
 
-	public int PerA;
-	public int PerB;
-	public int PerC;
-	public int PerD;
-	public int PerE;
-	public int PerF;
-	public int PerG1max;
-	public int PerG2help;
-	public int PerH;
-	public int PerI;
-	public int PerJ;
-	public int PerK;
+	public String PerA;
+	public String PerB;
+	public String PerC;
+	public String PerD;
+	public String PerE;
+	public String PerF;
+	public String PerG1max;
+	public String PerG2help;
+	public String PerH;
+	public String PerI;
+	public String PerJ;
+	public String PerK;
 
-	public void Peremennie() {
+	public PeremennieDlyaFila() {
+
+		PerConst1 = "qweqweq";
+		PerConst2 = "sfsdfsdfsdfdsfdsf";
 
 	}
 

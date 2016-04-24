@@ -1,6 +1,6 @@
 package taro;
 
-import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
 public abstract class Main implements ActionListener {
@@ -9,14 +9,6 @@ public abstract class Main implements ActionListener {
 
 		GUI gui = new GUI();
 		gui.initialize();
-
-	
-		
-		
-		
-		
-		
-		
 
 	}
 
