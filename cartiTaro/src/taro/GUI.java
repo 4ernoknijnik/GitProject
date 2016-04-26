@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 
-public class GUI {
+public class GUI  {
 
 	public static String day;
 	public static String month;
@@ -91,7 +91,7 @@ public class GUI {
 		button = new JButton("Рассчитать");
 		button.addActionListener(new ActionListener() {
 
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e)  {
 
 				day = textField.getText();
 				month = textField_1.getText();
@@ -102,7 +102,20 @@ public class GUI {
 
 				Raschet raschet = new Raschet();
 				raschet.Raschet();
-
+				
+				
+				
+				try {
+					TestFrame tf = new TestFrame();
+					tf.saveImage();
+					System.out.println("afaaf");
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+								
+					
+				
 			}
 		});
 
@@ -117,7 +130,7 @@ public class GUI {
 
 				Matematica matem = new Matematica();
 				matem.sum();
-
+							
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.setDialogTitle("Сохранить результат");
 				fileChooser.setFileFilter(null);
