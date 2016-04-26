@@ -11,11 +11,10 @@ public class FileXLS {
 	public void Create() {
 
 		PeremennieDlyaFila per = new PeremennieDlyaFila();
-		
-		
+
 		try {
-System.out.println(per.PerConst1);
-			String filename =GUI.SaveFile;
+
+			String filename = GUI.SaveFile;
 
 			@SuppressWarnings("resource")
 			HSSFWorkbook workbook = new HSSFWorkbook();

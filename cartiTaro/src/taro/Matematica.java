@@ -2,7 +2,7 @@ package taro;
 
 import taro.GUI;
 
-public  class Matematica {
+public class Matematica {
 	public static int Const1; // переменная Static что бы получить значение а не
 								// 0
 	public static int Const2;
@@ -31,7 +31,7 @@ public  class Matematica {
 	public static int J;
 	public static int K;
 
-	public  Matematica() {
+	public Matematica() {
 
 		Const1 = Integer.parseInt(GUI.day);
 		Const2 = Integer.parseInt(GUI.month);
@@ -107,7 +107,7 @@ public  class Matematica {
 			Const10 = Const2 - Const1;
 		} else
 			Const10 = 0;
-		System.out.println("10 = " + Const10 + "НАДО ПРОВЕРИТЬ ПРАВИЛЬНОСТЬ");
+		System.out.println("10 = " + Const10);
 
 		if (Const2 > Const3) {
 			Const11 = Const2 - Const3;
@@ -133,7 +133,7 @@ public  class Matematica {
 		} else if (Const13 >= 23) {
 			Const13 = Const13 - 22;
 		}
-		System.out.println("13 = " + Const13 + "НАДО ПРОВЕРИТЬ ПРАВИЛЬНОСТЬ");
+		System.out.println("13 = " + Const13);
 
 		// Дальше пошли буквы
 
@@ -208,6 +208,8 @@ public  class Matematica {
 			K = K - 22;
 		}
 		System.out.println("K = " + K);
+
+		System.out.println("Расчет окончен.");
 
 	}
 
