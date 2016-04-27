@@ -1,23 +1,20 @@
-package taro;
+package carti;
 
-import java.awt.Container;
-import java.awt.Dimension;
+
+
 import java.awt.Font;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
+
+
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
+
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 
-public class GUI {
+public class JPanelLeft extends GUI {
 
 	public static String day;
 	public static String month;
@@ -26,15 +23,6 @@ public class GUI {
 	public static String SaveFile;
 
 	public JFrame frame;
-	public JTextField textField;
-	public JTextField textField_1;
-	public JTextField textField_2;
-
-	private JButton button;
-	private JButton btnNewButton;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
 	public static JTextField textField_6;
 	public static JTextField textField_7;
 	public static JTextField textField_8;
@@ -60,111 +48,9 @@ public class GUI {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public void initialize() {
+	public void RunJPanelLeft() {
 
-		frame = new JFrame();
-		frame.setTitle("Taro");
-
-		Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize();
-		frame.setSize(sSize); // окно во весь экран
-		frame.setResizable(true);
-		// frame.setSize(600, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		textField = new JTextField();
-		textField.setText("23");
-		textField.setHorizontalAlignment(JTextField.CENTER); // сделать текст по
-																// середине
-		textField.setColumns(6);
-
-		textField_1 = new JTextField();
-		textField_1.setText("12");
-		textField_1.setHorizontalAlignment(JTextField.CENTER);
-		textField_1.setColumns(6);
-
-		textField_2 = new JTextField();
-		textField_2.setText("1985");
-		textField_2.setHorizontalAlignment(JTextField.CENTER);
-		textField_2.setColumns(8);
-
-		frame.setVisible(true);
-		button = new JButton("Рассчитать");
-		button.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-
-				day = textField.getText();
-				month = textField_1.getText();
-				year = textField_2.getText();
-
-				Matematica matem = new Matematica();
-				matem.sum();
-
-				Raschet raschet = new Raschet();
-				raschet.Raschet();
-
-			}
-		});
-
-		btnNewButton = new JButton("Сохранить результат");
-		btnNewButton.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent arg0) {
-
-				day = textField.getText();
-				month = textField_1.getText();
-				year = textField_2.getText();
-
-				Matematica matem = new Matematica();
-				matem.sum();
-
-				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setDialogTitle("Сохранить результат");
-				fileChooser.setFileFilter(null);
-				JFrame parentFrame = new JFrame();
-				int userSelection = fileChooser.showSaveDialog(parentFrame);
-				if (userSelection == JFileChooser.APPROVE_OPTION) {
-					File fileToSave = fileChooser.getSelectedFile();
-					SaveFile = fileToSave.getAbsolutePath() + ".xls";
-
-				}
-
-				FileXLS xls = new FileXLS();
-				xls.Create();
-
-				/*
-				 * 
-				 * Object[] buttons = {"Да", "Нет", "Отмена"}; int ans =
-				 * JOptionPane.showOptionDialog(null,
-				 * "Сохранить внеснные изменения?", "Диалог сохранения",
-				 * JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-				 * null, buttons, buttons[0]); if (ans == 0) {
-				 * frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 * System.out.println("сохранить и выйти"); } else if (ans ==
-				 * 1){ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 * System.out.println("выйти"); } else if (ans == 2){
-				 * frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-				 * System.out.println("ничего не делать"); }
-				 */
-			}
-		});
-
-		textField_3 = new JTextField();
-		textField_3.setText("Введитя Фамилия");
-		textField_3.setHorizontalAlignment(JTextField.CENTER);
-		textField_3.setColumns(14);
-
-		textField_4 = new JTextField();
-		textField_4.setText("Введитя Имя");
-		textField_4.setHorizontalAlignment(JTextField.CENTER);
-		textField_4.setColumns(14);
-
-		textField_5 = new JTextField();
-		textField_5.setText("Введитя Отчество");
-		textField_5.setHorizontalAlignment(JTextField.CENTER);
-		textField_5.setColumns(14);
-
-		textField_6 = new JTextField();
+				textField_6 = new JTextField();
 		textField_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_6.setText("1");
@@ -296,65 +182,25 @@ public class GUI {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(12)
+							.addGap(35)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(textField_14, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(textField)
-									.addGap(29)
-									.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(23)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(textField_14, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addComponent(textField_18, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-											.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-											.addComponent(textField_15, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
-										.addComponent(textField_9, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))))
+									.addComponent(textField_18, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+									.addComponent(textField_15, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
+								.addComponent(textField_9, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(100)
-							.addComponent(textField_6, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+							.addComponent(textField_6, GroupLayout.DEFAULT_SIZE, 4, Short.MAX_VALUE)
 							.addGap(52)))
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(textField_7, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+							.addComponent(textField_7, GroupLayout.DEFAULT_SIZE, 4, Short.MAX_VALUE)
 							.addGap(71)
 							.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 							.addGap(998))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(textField_17, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-							.addGap(1109))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(52)
-									.addComponent(textField_16, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-									.addGroup(groupLayout.createSequentialGroup()
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addGap(18)
-										.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addGap(18)
-										.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-										.addComponent(button, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
-										.addGap(18)
-										.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 307, GroupLayout.PREFERRED_SIZE)
-										.addGap(78))
-									.addGroup(groupLayout.createSequentialGroup()
-										.addGap(79)
-										.addComponent(textField_19, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-										.addContainerGap()))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(1005)
-									.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-									.addContainerGap())))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -364,48 +210,40 @@ public class GUI {
 								.addComponent(txtC, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 							.addGap(32)
 							.addComponent(txtD, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())))
+							.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(textField_17, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(52)
+									.addComponent(textField_16, GroupLayout.DEFAULT_SIZE, 4, Short.MAX_VALUE))
+								.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
+							.addGap(79)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField_19, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
+							.addContainerGap(935, Short.MAX_VALUE))))
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(116)
 					.addComponent(txtB, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1180, Short.MAX_VALUE))
+					.addContainerGap(1113, Short.MAX_VALUE))
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(155)
 					.addComponent(txtE, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 					.addGap(35)
 					.addComponent(txtF, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1066, Short.MAX_VALUE))
+					.addContainerGap(999, Short.MAX_VALUE))
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(188)
 					.addComponent(txtH, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1108, Short.MAX_VALUE))
+					.addContainerGap(1041, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(27)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(6)
-							.addComponent(textField))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(btnNewButton)
-						.addComponent(button, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
-							.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
-							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
-							.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addGap(150)
+					.addGap(200)
 					.addComponent(textField_17, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 					.addGap(7)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE, false)
@@ -419,10 +257,11 @@ public class GUI {
 						.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 					.addGap(15)
-					.addComponent(textField_14, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(textField_14, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+						.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 					.addGap(11)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE, false)
-						.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 					.addGap(35)
@@ -442,10 +281,10 @@ public class GUI {
 						.addComponent(txtF, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addComponent(txtH, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-					.addGap(27))
+					.addContainerGap(30, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 
 	}
-
+	
 }

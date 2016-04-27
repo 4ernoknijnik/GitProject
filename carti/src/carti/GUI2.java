@@ -1,6 +1,7 @@
-package taro;
+package carti;
 
-import java.awt.Container;
+
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -17,7 +18,11 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 
-public class GUI {
+import taro.FileXLS;
+import taro.Matematica;
+import taro.Raschet;
+
+public class GUI2 {
 
 	public static String day;
 	public static String month;
@@ -58,9 +63,10 @@ public class GUI {
 	public static JTextField txtH;
 
 	/**
+	 * @return 
 	 * @wbp.parser.entryPoint
 	 */
-	public void initialize() {
+	public Component GUI() {
 
 		frame = new JFrame();
 		frame.setTitle("Taro");
@@ -132,21 +138,7 @@ public class GUI {
 				FileXLS xls = new FileXLS();
 				xls.Create();
 
-				/*
-				 * 
-				 * Object[] buttons = {"Да", "Нет", "Отмена"}; int ans =
-				 * JOptionPane.showOptionDialog(null,
-				 * "Сохранить внеснные изменения?", "Диалог сохранения",
-				 * JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-				 * null, buttons, buttons[0]); if (ans == 0) {
-				 * frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 * System.out.println("сохранить и выйти"); } else if (ans ==
-				 * 1){ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 * System.out.println("выйти"); } else if (ans == 2){
-				 * frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-				 * System.out.println("ничего не делать"); }
-				 */
-			}
+							}
 		});
 
 		textField_3 = new JTextField();
@@ -445,6 +437,8 @@ public class GUI {
 					.addGap(27))
 		);
 		frame.getContentPane().setLayout(groupLayout);
+		return frame;
+		
 
 	}
 
